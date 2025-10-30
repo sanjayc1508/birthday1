@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SAKTHI'S WORLD ✨</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<audio id="birthdayAudio" src="assets/birthday.mp3" preload="auto"></audio>
+
+<body>
+  <canvas id="starfield"></canvas>
+
+  <header class="overlay">
+    <div class="brand">
+      <h1>WISH YOU MANY MORE HAPPY BIRTHDAY </h1>
+      <p class="tag">Every star here whispers a moment we lived —
+a spark in the dark sky of time.
+Click one… and let it pull you back
+to where laughter, light, and you still shine.</p>
+    </div>
+  </header>
+
+  <div id="sky"></div>
+
+  <div id="moon">
+    <img src="assets/envato-labs-image-edit (1).png" alt="Moon">
+  </div>
+
+  <!-- Memory Modal -->
+  <div class="modal" id="memoryModal">
+    <div class="modal-inner">
+      <button class="modal-close" id="closeMemory">&times;</button>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Moon Modal -->
+  <div class="modal" id="moonModal">
+    <div class="modal-inner">
+      <button class="modal-close" id="closeMoon">&times;</button>
+      <div class="modal-body">
+        <h2>Galaxy Playlist</h2>
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M" width="100%" height="180" frameborder="0" allow="autoplay; clipboard-write; encrypted-media;"></iframe>
+        <p class="moon-note">Click play to drift through the memories.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="script.js"></script>
+  <style>
+  
+  body{
+    margin:0;
+    height:100vh;
+    background:radial-gradient(circle at 50% 50%, #0a0a0f 20%, #000);
+    display:flex;
+    justify-content:bottom;
+    align-items:center;
+    overflow:hidden;
+    color:#fff;
+    font-family:'Inter',sans-serif;
+  }
+
+  .cake{
+    font-size:5rem;
+    text-shadow:
+      0 0 20px #ffb347,
+      0 0 40px #ffcc33,
+      0 0 80px #fff176;
+    animation:float 3s ease-in-out infinite alternate;
+    position:relative;
+    z-index:2;
+  }
+
+  @keyframes float{
+    from{transform:translateY(0);}
+    to{transform:translateY(-20px);}
+  }
+
+  /* Firecracker particles */
+  .spark{
+    position:absolute;
+    width:6px;
+    height:6px;
+    border-radius:50%;
+    background:radial-gradient(circle, #fff59d, transparent 70%);
+    animation:burst 1.2s linear infinite;
+  }
+
+  @keyframes burst{
+    0%{transform:scale(0.5) translate(0,0);opacity:1;}
+    50%{opacity:1;}
+    100%{transform:scale(1.8) translate(var(--x), var(--y));opacity:0;}
+  }
+
+  /* Random bursts around cake */
+  .spark:nth-child(1){--x:80px;--y:-100px;animation-delay:0s;}
+  .spark:nth-child(2){--x:-90px;--y:-120px;animation-delay:0.3s;}
+  .spark:nth-child(3){--x:60px;--y:90px;animation-delay:0.6s;}
+  .spark:nth-child(4){--x:-70px;--y:70px;animation-delay:0.9s;}
+  .spark:nth-child(5){--x:100px;--y:-50px;animation-delay:1.1s;}
+</style>
+</head>
+<body>
+  <div class="cake">🎂</div>
+
+  <div class="spark"></div>
+  <div class="spark"></div>
+  <div class="spark"></div>
+  <div class="spark"></div>
+  <div class="spark"></div>
+</body>
+</body>
+</html>
